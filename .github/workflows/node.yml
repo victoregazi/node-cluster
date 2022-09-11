@@ -1,0 +1,19 @@
+name: NODE Performance CI
+on:
+  push: 
+     branches: [ master ]
+    pull_request: 
+      branches: [ master ]
+jobs: 
+  build: 
+     runs-on: macos-latest
+     steps: 
+       - uses: actions/checkout@v1
+       - name: User Node.js version 16
+         users: actions/setup-node@v1
+         with: 
+           node-version: '16'
+      - run: npm install 
+      
+
+
